@@ -1,0 +1,27 @@
+#include <fstream>      // std::fstream
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+int main () {
+  string line;
+  ifstream ifs;
+  ifs.open ("highscore.txt", ios::in);
+
+  getline(ifs, line);
+  string name;
+  int score; 
+  stringstream ss(line);
+  ss >> name; ss >> score;
+  cout << name << endl;
+  cout << score << endl;
+  ifs.close();
+  
+  ofstream ofs;
+  int point = 100000;
+  ofs.open ("highscore.txt", ios::trunc );
+  ofs << "newplayer " << point << endl; 
+  ofs.close();
+  system("pause");
+  return 0;
+}
