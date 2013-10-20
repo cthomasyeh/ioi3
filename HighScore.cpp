@@ -4,15 +4,12 @@
 using namespace std;
 
 int main () {
-  string line;
   ifstream ifs;
   ifs.open ("highscore.txt", ios::in);
 
-  getline(ifs, line);
   string name;
   int score; 
-  stringstream ss(line);
-  ss >> name; ss >> score;
+  ifs >> name >> score;
   cout << name << endl;
   cout << score << endl;
   ifs.close();
